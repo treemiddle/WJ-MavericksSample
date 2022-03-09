@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/dogFragment"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/dogFragment"
+        android:name="com.jay.wj_maverickssample.ui.DogFragment"
+        tools:layout="@layout/fragment_dog" />
+
+    <fragment
+        android:id="@+id/dogDetailFragment"
+        android:name="com.jay.wj_maverickssample.ui.DogFragment"
+        tools:layout="@layout/fragment_dog_detail" />
+
+    <fragment
+        android:id="@+id/adoptionFragment"
+        android:name="com.jay.wj_maverickssample.ui.DogFragment"
+        tools:layout="@layout/fragment_adoption" />
+
+</navigation>
