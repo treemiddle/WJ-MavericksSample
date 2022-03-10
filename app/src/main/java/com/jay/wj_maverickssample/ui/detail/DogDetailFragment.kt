@@ -1,4 +1,4 @@
-package com.jay.wj_maverickssample.ui
+package com.jay.wj_maverickssample.ui.detail
 
 import androidx.fragment.app.Fragment
 import com.airbnb.mvrx.MavericksView
