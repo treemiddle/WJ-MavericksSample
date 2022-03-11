@@ -16,7 +16,17 @@ class MainViewModel(
 ) : MavericksViewModel<DogState>(initialState) {
 
     init {
-        dogRepository.getDogs().execute { copy(dogs = it) }
+        dogRepository.getDogs()
+            .execute { copy(dogs = it) }
+    }
+
+    fun loveDog(dogId: Long) = setState { copy(loveDogId = dogId) }
+
+    fun adopLoveDog() = withState { state ->
+        val loveDog = state.loveDog ?: throw IllegalStateException("you mst love a dog first!")
+
+        dogRepository.adoptDog(loveDog)
+            .execute { copy(adoptionRequest = it) }
     }
 
     companion object : MavericksViewModelFactory<MainViewModel, DogState> {

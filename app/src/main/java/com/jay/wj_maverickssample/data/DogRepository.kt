@@ -1,11 +1,8 @@
 package com.jay.wj_maverickssample.data
 
-import io.reactivex.Single
-import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import java.util.concurrent.TimeUnit
 
 class DogRepository {
     fun getDogs(): Flow<List<Dog>> {
@@ -75,8 +72,11 @@ class DogRepository {
         }
     }
 
-    fun adoptDog(dog: Dog) = Single.just(dog)
-        .delaySubscription(2, TimeUnit.SECONDS)
-        .subscribeOn(Schedulers.io())
+    fun adoptDog(dog: Dog): Flow<Dog> {
+        return flow {
+            delay(2000)
+            emit(dog)
+        }
+    }
 
 }

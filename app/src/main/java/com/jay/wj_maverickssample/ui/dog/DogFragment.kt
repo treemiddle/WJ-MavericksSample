@@ -15,6 +15,7 @@ import com.jay.wj_maverickssample.data.Dog
 import com.jay.wj_maverickssample.databinding.FragmentDogBinding
 import com.jay.wj_maverickssample.ui.DogAdapter
 import com.jay.wj_maverickssample.ui.MainViewModel
+import com.jay.wj_maverickssample.ui.detail.DogDetailFragment
 
 class DogFragment : Fragment(), MavericksView, DogHandler {
 
@@ -43,11 +44,12 @@ class DogFragment : Fragment(), MavericksView, DogHandler {
     }
 
     override fun onDogClicked(dog: Dog) {
-        findNavController().navigate(R.id.dogDetailFragment)
+        findNavController().navigate(R.id.dogDetailFragment, DogDetailFragment.newInstance(dog.id))
     }
 
     override fun adoptLoveDog() {
-
+        activityViewModel.adopLoveDog()
+        findNavController().navigate(R.id.adoptionFragment)
     }
 
 }
