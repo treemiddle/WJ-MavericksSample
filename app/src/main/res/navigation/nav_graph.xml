@@ -9,10 +9,16 @@
         android:id="@+id/dogFragment"
         android:name="com.jay.wj_maverickssample.ui.dog.DogFragment"
         tools:layout="@layout/fragment_dog">
-
         <action
             android:id="@+id/action_dogFragment_to_dogDetailFragment"
             app:destination="@id/dogDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_dogFragment_to_adoptionFragment"
+            app:destination="@id/adoptionFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"

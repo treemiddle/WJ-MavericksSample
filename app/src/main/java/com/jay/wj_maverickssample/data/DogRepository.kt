@@ -3,6 +3,7 @@ package com.jay.wj_maverickssample.data
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 
 class DogRepository {
     fun getDogs(): Flow<List<Dog>> {
@@ -72,11 +73,6 @@ class DogRepository {
         }
     }
 
-    fun adoptDog(dog: Dog): Flow<Dog> {
-        return flow {
-            delay(2000)
-            emit(dog)
-        }
-    }
+    fun adoptDog(dog: Dog) = flowOf(dog)
 
 }

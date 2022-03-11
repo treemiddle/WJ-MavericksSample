@@ -15,6 +15,5 @@ fun visibleIf(view: View, visible: Boolean) {
 @BindingAdapter("asyncList")
 fun <T> setListAdapterData(rv: RecyclerView, data: Async<List<T>>?) {
     @Suppress("UNCHECKED_CAST")
-    println("??????????: ${data?.invoke()?.size}")
     (rv.adapter as ListAdapter<Any, *>).submitList(data?.invoke() ?: emptyList())
 }
